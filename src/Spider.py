@@ -149,7 +149,7 @@ class Spider_ZhiLian(Spider):
 
 
     def run(self):
-        self.database.delete()
+        print(ini.testInfo)
         self.getHtml()
         self.getCategory()
         self.database.setDatabase("Jobs")
