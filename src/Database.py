@@ -5,7 +5,7 @@
 #describe:  A mysql database library 
 
 import pymysql
-
+import getpass
 
 class Database(object):
 #mysql数据库类：
@@ -71,7 +71,9 @@ class Database(object):
 #               修改数据段
 # 
 
-    def __init__(self, user="root", passwd="13212661081w", host="127.0.0.1",port=3306, database="TEST",charset='utf8'):
+    def __init__(self, user="", passwd="", host="127.0.0.1",port=3306, database="TEST",charset='utf8'):
+        user = input("请输入Mysql用户名：")
+        passwd = getpass.getpass()
         self.database = pymysql.connect(host=host, port=port, user=user, password=passwd, database=database, charset=charset)
         self.username = user
         self.passwd = passwd
