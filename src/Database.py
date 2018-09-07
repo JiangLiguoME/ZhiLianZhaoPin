@@ -189,27 +189,3 @@ class Database(object):
         print("当前编码：")
         self.code = self.showResult()
         
-"""  
-    def changeCode(self,code="utf8"):
-        self.__checkCode()
-        option = [i[0] for i in self.code]
-        for i in option:
-            self.query = "set %s=%s;"%(i,code)
-            self.showResult()
-        self.__checkCode()
-"""
-if __name__ == "__main__":
-    a=Database()
-    a.setDatabase("Jobs")
-    a.setTable("USER")
-    a.select()
-    query = {
-        "lastname":"'蒋'",
-        "firstname":"'利国'"
-    }
-    a.select(query)
-    data=a.showColumns()
-    a.delete(query)
-    a.select()
-    a.insert(query)
-    a.select()
